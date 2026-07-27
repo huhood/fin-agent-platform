@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 from backend.app.main import app
+from backend.app.core.config import settings
 
 
 client = TestClient(app)
@@ -42,3 +43,7 @@ def test_create_agent_without_name() -> None:
     )
 
     assert response.status_code == 422
+
+
+def test_app_uses_configured_name():
+    assert app.title == settings.APP_NAME

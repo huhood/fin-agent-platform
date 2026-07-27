@@ -4,6 +4,8 @@ __pycache__/
 .venv/
 venv/
 .env
+.pytest_cache
+
 
 # Node.js
 node_modules/
